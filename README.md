@@ -3,7 +3,7 @@
 
 js相关文章
 
-[手写promise](https://github.com/leocoder351/my-promise)
+手写[promise](https://github.com/leocoder351/my-promise)
 
 
 
