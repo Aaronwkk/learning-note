@@ -1,6 +1,10 @@
 # learning-note
 好文章记录（知识点学习和总结）
 
+## 博客
+
+[代码随想录](https://www.programmercarl.com/)
+
 ## js相关文章
 
 手写[promise](https://github.com/leocoder351/my-promise)
