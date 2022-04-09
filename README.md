@@ -90,6 +90,9 @@ Public](https://github.com/mqyqingfeng/frontend-interview-question-and-answer)
 
 [dayjs](https://github.com/iamkun/dayjs)
 
+## 新的知识
+[go 快速上手](https://github.com/jaywcjlove/golang-tutorial)
+
 ## 上海买房
 
 [shanghai_house_knowledge](https://github.com/ayuer/shanghai_house_knowledge)
