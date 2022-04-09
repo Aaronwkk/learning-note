@@ -90,6 +90,8 @@ Public](https://github.com/mqyqingfeng/frontend-interview-question-and-answer)
 
 [dayjs](https://github.com/iamkun/dayjs)
 
+[linux 查询工具](https://wangchujiang.com/linux-command/)
+
 ## 新的知识
 [go 快速上手](https://github.com/jaywcjlove/golang-tutorial)
 
