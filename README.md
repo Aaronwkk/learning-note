@@ -50,6 +50,8 @@ Public](https://github.com/mqyqingfeng/frontend-interview-question-and-answer)
 
 [冴羽 eventBus 实现](https://github.com/mqyqingfeng/EventEmitter)
 
+[node.js 面试题](https://www.iamshuaidi.com/5098.html)
+
 ## 算法
 
 [leetcode 算法讲解](https://github.com/azl397985856/leetcode)
