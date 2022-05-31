@@ -42,6 +42,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [35 道咱们必须要清楚的 React 面试题](https://juejin.cn/post/6844903988073070606#heading-6)
 
+[react 源码](https://xiaochen1024.com/courseware/60b1b2f6cf10a4003b634718/60b1b354cf10a4003b634721)
+
 ## vue
 
 [vue简单实现](https://github.com/cuixiaorui/mini-vue)
