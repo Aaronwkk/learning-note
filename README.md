@@ -58,6 +58,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [vue3 的优化](https://juejin.cn/post/7010594233253888013#heading-9)
 
+[vue3 的源码讲解](https://vue3js.cn/start/)
+
 ## ts
 
 [typescript](https://ts.xcatliu.com/basics/type-of-function.html)
