@@ -44,6 +44,12 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [react 源码](https://xiaochen1024.com/courseware/60b1b2f6cf10a4003b634718/60b1b354cf10a4003b634721)
 
+[react-fiber-implement fiber 源码简版](https://github.com/tranbathanhtung/react-fiber-implement)
+
+[react-starter-kit 服务端渲染](https://github.com/kriasoft/react-starter-kit/tree/master)
+
+[整理的 React 源码分析教程，是我见过目前讲解 React 源码最好的教程了。要是觉得 preact 和 react-fiber-implement 不够官方，那可以跟着这个教程来一步步学习 React 源码](https://react.iamkasong.com/)
+
 ## vue
 
 [vue简单实现](https://github.com/cuixiaorui/mini-vue)
