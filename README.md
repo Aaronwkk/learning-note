@@ -60,6 +60,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [Vue 源码解读（3）—— 响应式原理](https://juejin.cn/post/6950826293923414047#heading-8)
 
+[为什么说 Vue 的响应式更新精确到组件级别？（原理深度解析）](https://juejin.cn/post/6844904113432444942#comment)
+
 ## vue3
 
 [vue3.0 diff算法详解(超详细)](https://zhuanlan.zhihu.com/p/150103393)
