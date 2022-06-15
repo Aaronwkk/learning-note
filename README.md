@@ -50,6 +50,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [整理的 React 源码分析教程，是我见过目前讲解 React 源码最好的教程了。要是觉得 preact 和 react-fiber-implement 不够官方，那可以跟着这个教程来一步步学习 React 源码](https://react.iamkasong.com/)
 
+[阿里三面：灵魂拷问——有react fiber，为什么不需要vue fiber？](https://mp.weixin.qq.com/s/3Y35s9DelExmO9LSDuNDGw)
+
 ## vue
 
 [vue简单实现](https://github.com/cuixiaorui/mini-vue)
