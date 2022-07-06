@@ -52,6 +52,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [阿里三面：灵魂拷问——有react fiber，为什么不需要vue fiber？](https://mp.weixin.qq.com/s/3Y35s9DelExmO9LSDuNDGw)
 
+[react setState 执行更新的机制](https://cloud.tencent.com/developer/article/1592636)
+
 ## vue
 
 [vue简单实现](https://github.com/cuixiaorui/mini-vue)
