@@ -156,6 +156,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [挑战一轮大厂后的面试总结 (含六个方向) - nodejs 篇](https://juejin.cn/post/6844904071501971469#heading-1)
 
+[understand-nodejs node 原理讲解，从源码角度](https://github.com/theanarkh/understand-nodejs)
+
 
 ## mongodb
 [全栈实现，mall](https://github.com/macrozheng/mall)
