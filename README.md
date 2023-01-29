@@ -78,6 +78,10 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [typescript 练习工具](https://www.typescriptlang.org/play?#code/CYUwxgNghgTiAEAzArgOzAFwJYHtXwCsBFZEGATwAoBnECcDHGALnmoxi1QHMBKVqKnIBuIA)
 
+[Ts高手篇：22个示例深入讲解Ts最晦涩难懂的高级类型工具](https://juejin.cn/post/6994102811218673700#heading-7)
+
+[让你更好使用 Typescript 的11个技巧](https://juejin.cn/post/7184956275157893176#heading-0)
+
 ## 微服务
 
 [qiankun js 沙箱隔离](https://juejin.cn/post/6920110573418086413#heading-12)
