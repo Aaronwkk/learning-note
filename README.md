@@ -27,6 +27,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [js基础知识]()
 
+[v8 GC](https://juejin.cn/post/6943190391881465892#heading-8)
+
 
 
 
