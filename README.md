@@ -29,6 +29,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [v8 GC](https://juejin.cn/post/6943190391881465892#heading-8)
 
+[v8对闭包的处理](https://www.cnblogs.com/rubylouvre/p/3345294.html)
+
 
 
 
