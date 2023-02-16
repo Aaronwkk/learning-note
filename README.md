@@ -58,6 +58,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [react setState 执行更新的机制](https://cloud.tencent.com/developer/article/1592636)
 
+[react build-your-own-react](https://pomb.us/build-your-own-react/)
+
 ## vue
 
 [vue简单实现](https://github.com/cuixiaorui/mini-vue)
