@@ -168,6 +168,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [understand-nodejs node 原理讲解，从源码角度](https://github.com/theanarkh/understand-nodejs)
 
+[理解Node中的Buffer与stream](https://juejin.cn/post/6955331683499376676#heading-2)
+
 
 ## mongodb
 [全栈实现，mall](https://github.com/macrozheng/mall)
