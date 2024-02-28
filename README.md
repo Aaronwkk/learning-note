@@ -126,6 +126,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [tapable的设计理念：单态、多态及内联缓存](https://github.com/lizuncong/mini-tapable/blob/master/tapable%E7%B2%BE%E8%AE%B2.md)
 
+[V8引擎详解（五）——内联缓存](https://juejin.cn/post/6844904167333429256)
+
 
 ## vite
 
