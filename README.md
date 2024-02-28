@@ -124,6 +124,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [Webpack 事件流核心 Tapable 源码解析](https://juejin.cn/post/7071914394795868191#heading-40)
 
+[tapable的设计理念：单态、多态及内联缓存](https://github.com/lizuncong/mini-tapable/blob/master/tapable%E7%B2%BE%E8%AE%B2.md)
+
 
 ## vite
 
