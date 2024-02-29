@@ -120,7 +120,7 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [在淘宝优化了一个大型项目，分享一些干货（Webpack，SplitChunk代码实例，图文结合）](https://juejin.cn/post/6844904183917871117)
 
-[Webpack tapable 使用研究](https://juejin.cn/post/6844903895584473096)
+[webpack系列之二Tapable](webpack系列之二Tapable)
 
 [Webpack 事件流核心 Tapable 源码解析](https://juejin.cn/post/7071914394795868191#heading-40)
 
