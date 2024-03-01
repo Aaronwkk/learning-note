@@ -70,6 +70,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [为什么说 Vue 的响应式更新精确到组件级别？（原理深度解析）](https://juejin.cn/post/6844904113432444942#comment)
 
+[Vue2 和 Vue3 的响应式原理比对](https://juejin.cn/post/7124351370521477128?searchId=202403010931034D303B43543E9C53F2B5)
+
 ## vue3
 
 [vue3.0 diff算法详解(超详细)](https://zhuanlan.zhihu.com/p/150103393)
