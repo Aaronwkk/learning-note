@@ -176,6 +176,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [理解Node中的Buffer与stream](https://juejin.cn/post/6955331683499376676#heading-2)
 
+[node事件循环，以及node的内部实现原理](https://zhuanlan.zhihu.com/p/428394028)
+
 
 ## mongodb
 [全栈实现，mall](https://github.com/macrozheng/mall)
