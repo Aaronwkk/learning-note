@@ -1,0 +1,68 @@
+{
+  "workbench.editor.enablePreview": false, //打开文件不覆盖
+  "search.followSymlinks": false, //关闭rg.exe进程
+  "editor.minimap.enabled": false, //关闭快速预览
+  "liveServer.settings.donotShowInfoMsg": true, //关闭liveserver提示
+  // "files.autoSave": "afterDelay", //打开自动保存
+  "editor.fontSize": 13, //设置文字大小
+  "editor.lineHeight": 20, //设置文字行高
+  "editor.lineNumbers": "on", //开启行数提示
+  "editor.quickSuggestions": {
+    //开启自动显示建议
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "window.zoomLevel": 0, // 调整窗口的缩放级别
+  "editor.tabSize": 2, //制表符符号eslint
+  // "editor.formatOnSave": true, //每次保存自动格式化
+  // #让prettier使用eslint的代码格式进行校验
+  "fileheader.configObj": {
+    "autoAdd": true // 默认开启
+  },
+  // #使用带引号替代双引号
+  "prettier.singleQuote": false,
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "eslintIntegration": true,
+      "semi": false
+    }
+  },
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": false, //让函数(名)和后面的括号之间加个空格
+  "vetur.format.defaultFormatter.js": "vscode-typescript", //让vue中的js按编辑器自带的ts格式进行格式化
+  // "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "eslint.validate": [
+    //开启对.vue文件中错误的检查
+    "javascript",
+    "javascriptreact",
+    "html",
+    "vue"
+  ],
+  // "workbench.iconTheme": "vscode-icons",
+  "explorer.confirmDelete": false,
+  // 文件头部注释
+  "fileheader.customMade": {
+    "Author": "jiashuangxi",
+    "Date": "Do not edit",
+    "LastEditors": "jiashuangxi",
+    "LastEditTime": "Do not Edit",
+    "Describe": ""
+  },
+  //函数注释
+  "fileheader.cursorMode": {
+    "Description": "",
+    "param": ""
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "editor.wordWrap": "on",
+  // 每次保存的时候将代码按eslint格式进行修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "vetur.experimental.templateInterpolationService": true
+}
