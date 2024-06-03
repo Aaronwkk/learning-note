@@ -250,6 +250,10 @@ Public](https://github.com/mqyqingfeng/frontend-interview-question-and-answer)
 
 [脚手架的原理](https://juejin.cn/post/6844904045845577742#heading-15)
 
+## http 协议
+
+[三次握手、七次握手、四次挥手](https://github.com/pro648/tips/blob/master/sources/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E4%B8%83%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.md)
+
 
 ## 新的知识
 [go 快速上手](https://github.com/jaywcjlove/golang-tutorial)
