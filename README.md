@@ -31,7 +31,7 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [v8对闭包的处理](https://www.cnblogs.com/rubylouvre/p/3345294.html)
 
-
+[Web Components](https://juejin.cn/post/7350502488493867042?searchId=202406051335023BBE1D21BB275377B2FC#heading-4)
 
 
 ## react
