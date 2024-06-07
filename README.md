@@ -255,6 +255,10 @@ Public](https://github.com/mqyqingfeng/frontend-interview-question-and-answer)
 [三次握手、七次握手、四次挥手](https://github.com/pro648/tips/blob/master/sources/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E4%B8%83%E6%AC%A1%E6%8F%A1%E6%89%8B%E3%80%81%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.md)
 [HTTP1、HTTP2、HTTP3 版本区别](https://juejin.cn/post/6855470356657307662)
 
+## LangChain 
+
+[Agent 原理解析](https://zhuanlan.zhihu.com/p/655141968)
+
 ## 新的知识
 [go 快速上手](https://github.com/jaywcjlove/golang-tutorial)
 
