@@ -107,3 +107,100 @@
    ```
 
 选择哪种方法取决于你的具体需求，比如你是否需要封装样式，或者是否希望允许样式从外部被覆盖或修改。
+
+### ：host 伪类改变 组件样式
+
+
+在Web组件中，`:host`伪类选择器是用来选中当前定义Shadow DOM的宿主元素（即包含Shadow DOM的元素）。这意味着你可以直接对宿主元素应用样式，而不需要知道它的具体标签名。`:host`伪类非常有用，因为它帮助你保持组件的样式封装，并能根据宿主元素的状态来调整样式。
+
+### 基本写法
+
+基本的`:host`伪类写法如下：
+
+```css
+:host {
+  /* 在这里添加应用于宿主元素的样式规则 */
+  background-color: blue;
+  font-size: 16px;
+}
+```
+### :host()伪类函数
+
+:host(.my-card) 只会选择类名为 my-card 的自定义元素, 且它后面也可以跟子选择器来选择自己跟节点下的子元素。
+
+需要注意的是：:host() 的参数是必传的，否则选择器函数失效
+
+### 传参 - 通过属性状态改变样式
+
+虽然`:host`本身不直接“传参”，但你可以利用宿主元素的属性（attributes）来改变其样式。这意味着你可以根据宿主元素上是否存在某个属性或属性的值来应用不同的样式。这通常称为“属性选择器”。
+
+例如，如果你想根据宿主元素上是否存在一个名为`theme`的属性来改变背景颜色，可以这样做：
+
+```css
+:host([theme="dark"]) {
+  background-color: #333;
+  color: white;
+}
+
+:host:not([theme="dark"]) {
+  background-color: white;
+  color: black;
+}
+```
+
+在这个例子中，如果宿主元素有`theme="dark"`这个属性，那么背景色将变为深色，并且文字颜色变为白色；否则，背景色为白色，文字颜色为黑色。
+
+### 注意
+
+- `:host`仅在Shadow DOM上下文中有效。
+- 使用`:host-context()`可以基于宿主元素的祖先元素来改变样式，提供一种跨Shadow DOM边界传递样式的方式。
+- 通过监听宿主元素的属性变化并利用JavaScript动态修改样式是一种更复杂的交互方式，但这不属于`:host`伪类直接“传参”的范畴。
+
+### :host-context()伪类函数
+
+用来选择特定祖先内部的自定义元素，祖先元素选择器通过参数传入。比如以下代码：
+
+```js
+<div id="container">
+    <my-card></my-card>
+</div>
+<my-card></my-card>
+<script>
+    class MyCard extends HTMLElement {
+        constructor () {
+            super();
+            this.shadow = this.attachShadow({mode: "open"});
+            let styleEle = document.createElement("style");
+            styleEle.textContent = `
+                :host-context(#container){
+                    display: block;
+                    margin: 20px;
+                    width: 200px;
+                    height: 200px;
+                    border: 3px solid #000;
+                }
+                :host .card-header{
+                    border: 2px solid red;
+                    padding:10px;
+                    background-color: yellow;
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            `;
+            this.shadow.appendChild(styleEle);
+
+
+            let headerEle = document.createElement("div");
+            headerEle.className = "card-header";
+            headerEle.innerText = "My Card";
+            this.shadow.appendChild(headerEle);
+        }
+    }
+
+    window.customElements.define("my-card", MyCard);
+</script>
+```
+
+
+
+[Web_Components 系列](https://cloud.tencent.com/developer/article/1943789)

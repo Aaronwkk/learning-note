@@ -60,6 +60,11 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [react build-your-own-react](https://pomb.us/build-your-own-react/)
 
+[ahooks 源码解析](https://gpingfeng.github.io/ahooks-analysis/hooks/scene/use-virtual-list)
+
+[ahooks 源码解析- 虚拟滚动](https://gpingfeng.github.io/ahooks-analysis/hooks/scene/use-virtual-list)
+
+
 ## vue
 
 [vue简单实现](https://github.com/cuixiaorui/mini-vue)
@@ -122,7 +127,7 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [在淘宝优化了一个大型项目，分享一些干货（Webpack，SplitChunk代码实例，图文结合）](https://juejin.cn/post/6844904183917871117)
 
-[webpack系列之二Tapable](webpack系列之二Tapable)
+[webpack系列之二Tapable](https://juejin.cn/post/7164175171358556173?searchId=2024061219574976E130348740B6718378#heading-14)
 
 [Webpack 事件流核心 Tapable 源码解析](https://juejin.cn/post/7071914394795868191#heading-40)
 
