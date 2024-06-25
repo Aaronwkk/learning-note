@@ -3,7 +3,49 @@
 
 # 深拷贝函数
 
-## 定义复杂数据类型判断函数
+- deepCopy 实现
+
+```js
+
+function deepCopy(obj){
+  if(obj === null || typeof obj === 'object') return obj
+
+  let res;
+
+  if('_isActiveClone' in obj){
+    throw Error('循环引用警告⚠️')
+  }
+
+  if(obj instanceOf Date){
+    res = new obj.constructor(obj)
+  } else {
+    res = new obj.constructor()
+  }
+
+  Object.keys(obj).forEach(k => {
+    obj._isActiveClone = null
+    res[k] = deepCopy(obj[k])
+    delete obj._isActiveClone
+  })
+
+  return res
+}
+
+let a = {
+  name: 'name',
+  list: [1,2,3, {c: 'c'}],
+  date: new Date(),
+  c: () => {}
+}
+let obj = {
+  people: {
+    name: 'name',
+  },
+  arr: []
+}
+console.log(deepCopy(obj))
+
+```
 
 ```javascript
 const isComplexDataType = obj => (typeOf obj === 'object' || typeOf obj === 'function') && obj !== null;
@@ -26,8 +68,10 @@ const deepClone = function(obj, hash = new WeakMap()) {
   }
   let allDesc = Object.getOwnPropertyDescriptors(obj);
   // 遍历传入参数所有键的特性
+  // Object.getPrototypeOf 是JavaScript中的一个标准内置方法，用于获取一个对象的原型（prototype）
   let cloneObj = Object.create(Object.getPrototypeOf(obj), allDesc);
   hash.set(obj, cloneObj);
+  // Reflect.ownKeys(obj) 的目的是为了获取对象 obj 所有的自有属性键，包括常规的可枚举和不可枚举属性、Symbol 类型的属性
   for (let key of Reflect.ownKeys(obj)) {
     cloneObj[key] = isComplexDataType(obj[key]) && typeOf obj[key] !== 'function' ?
       deepClone(obj[key], hash) : obj[key];
@@ -35,7 +79,6 @@ const deepClone = function(obj, hash = new WeakMap()) {
   return cloneObj;
 };
 ```
-
 ## 验证代码用例
 ```javascript
 let obj = {
