@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerformanceEventTiming API Example</title>
+</head>
+<body>
+    <button id="test-button">Click Me</button>
+
+    <script>
+        // 检查浏览器是否支持 PerformanceEventTiming API
+        if ('PerformanceObserver' in window && PerformanceObserver.supportedEntryTypes.includes('event')) {
+            // 创建 PerformanceObserver 实例
+            const observer = new PerformanceObserver((list) => {
+                list.getEntries().forEach((entry) => {
+                  console.log(entry)
+                    if (entry.entryType === 'event') {
+                        console.log(`Event: ${entry.name}`);
+                        console.log(`Start time: ${entry.startTime}`);
+                        console.log(`Processing start: ${entry.processingStart}`);
+                        console.log(`Duration: ${entry.duration}`);
+                        console.log(`Delay: ${entry.processingStart - entry.startTime}`);
+                    }
+                });
+            });
+
+            // 开始观察 event 事件
+            observer.observe({ type: 'event', buffered: true });
+        } else {
+            console.log('PerformanceEventTiming API is not supported in this browser.');
+        }
+
+        // 添加点击事件监听器
+        document.getElementById('test-button').addEventListener('click', () => {
+            console.log('Button clicked!');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+          // 为按钮添加点击事件监听器
+          document.getElementById('myButton').addEventListener('click', handleClick);
+
+          function handleClick(event) {
+              // 在事件处理开始前打一个mark
+              performance.mark('eventStart');
+
+              // 模拟一些耗时的操作
+              const startTime = performance.now();
+              for(let i = 0; i < 10000000; i++) {
+                  // 空循环模拟延时
+              }
+              const endTime = performance.now();
+
+              // 事件处理结束后打一个mark
+              performance.mark('eventEnd');
+              
+              // 创建一个measure来计算两个mark之间的耗时
+              performance.measure('eventHandling', 'eventStart', 'eventEnd');
+
+              // 获取并打印measure的结果
+              const measure = performance.getEntriesByName('eventHandling')[0];
+              console.log(`Event handling time: ${measure.duration}ms`);
+              
+              // 清理marks和measures以供下次使用
+              performance.clearMarks();
+              performance.clearMeasures();
+          }
+        });
+    </script>
+</body>
+</html>

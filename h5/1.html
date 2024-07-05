@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="./1.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body>
+    <div class="div1"></div>
+    <div class="name">namenamenam</div>
+    <div class="name1">name px name</div>
+    <div></div>
+  </body>
+  <style>
+    .div1{
+      width: 7.5rem;
+      border-bottom: 1px solid #000;
+      margin: 0;
+      padding: 0;
+    }
+    .name{
+      font-size: 0.26rem;
+      border-bottom: 1px solid #000;
+    }
+    .name1{
+      font-size: 26px;
+      width: 375px;
+      border-bottom: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+<script>
+const win = window
+win.flex = (baseFontSize, fontscale) => {
+
+// 获取传入的基础字体大小和字体缩放系数，如果没有传递，则分别默认为100和1。
+const _baseFontSize = baseFontSize || 100;
+const _fontscale = fontscale || 1;
+
+const doc = win.document; // 获取document对象。
+
+let dpr = win.devicePixelRatio || 1; // 获取设备的像素比，如果没有则默认为1。
+
+console.log('dpr', dpr)
+
+// 计算缩放比例，一般情况下为1/dpr，但在上述条件中可能已被设为1。
+const scale = 1 / dpr;
+
+// 获取或创建viewport元标签，用于控制页面的视口尺寸和缩放。
+let metaEl = doc.querySelector('meta[name="viewport"]');
+if (!metaEl) {
+  metaEl = doc.createElement('meta');
+  metaEl.setAttribute('name', 'viewport');
+  doc.head.appendChild(metaEl);
+}
+// 设置viewport的内容属性，固定宽度为设备宽度，不允许用户缩放，并设置初始、最大和最小缩放比例。
+metaEl.setAttribute('content', `width=device-width,user-scalable=no,initial-scale=${scale},maximum-scale=${scale},minimum-scale=${scale}`);
+
+// 设置根元素的字体大小，基于基础字体大小、设备像素比和字体缩放系数计算得出。
+doc.documentElement.style.fontSize = `${_baseFontSize / 2 * dpr * _fontscale}px`;
+console.log(doc.documentElement.style.fontSize)
+};
+
+// win.flex()
+
+function setRem (baseWidth = 750) {
+  const dpr = window.devicePixelRatio
+  const currentWidth = document.documentElement.clientWidth
+  let remSize = 0
+  let scale = 0
+  scale = currentWidth / baseWidth
+  remSize = 100 * scale
+  document.documentElement.style.fontSize = `${remSize}px`
+  console.log(currentWidth, remSize)
+}
+
+setRem()
+
+// window.addEventListener('resize', win.flex(), false)
+// window.addEventListener('resize', setRem, false)
+
+</script>
+</body>
+</html>
