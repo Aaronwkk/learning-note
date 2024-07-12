@@ -50,53 +50,11 @@ console.log(deepCopy(obj))
 ## 定义深拷贝函数
 
 ```js
-
-const deepClone = function(obj, hash = new WeakMap()) {
-  // 处理 null 或 undefined
-  if (obj === null || typeof obj !== 'object') {
-    return obj;
-  }
-
-  // 处理日期对象
-  if (obj instanceof Date) {
-    return new Date(obj);
-  }
-
-  // 处理正则对象
-  if (obj instanceof RegExp) {
-    return new RegExp(obj);
-  }
-
-  // 如果循环引用了就用 weakMap 来解决
-  if (hash.has(obj)) {
-    return hash.get(obj);
-  }
-
-  // 创建对象副本
-  let cloneObj = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj));
-
-  // 存储到哈希表中，处理循环引用
-  hash.set(obj, cloneObj);
-
-  // 遍历对象属性进行拷贝
-  let allDesc = Object.getOwnPropertyDescriptors(obj);
-  for (let key of Reflect.ownKeys(obj)) {
-    if (allDesc[key].get || allDesc[key].set) {
-      Object.defineProperty(cloneObj, key, allDesc[key]);
-    } else {
-      cloneObj[key] = deepClone(obj[key], hash);
-    }
-  }
-
-  return cloneObj;
-};
-
 // 辅助函数判断复杂数据类型
 const isComplexDataType = obj => (typeof obj === 'object' || typeof obj === 'function') && (obj !== null);
 
 const deepClone = function(obj, hash = new WeakMap()) {
-
-    // 处理 null 或 undefined
+  // 处理 null 或 undefined
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
@@ -105,28 +63,55 @@ const deepClone = function(obj, hash = new WeakMap()) {
   if (obj.constructor === Date) {
     return new Date(obj);
   }
+  
   // 正则对象直接返回一个新的正则对象
   if (obj.constructor === RegExp) {
     return new RegExp(obj);
   }
-  // 如果循环引用了就用weakMap来解决
+
+  // 如果循环引用了就用 weakMap 来解决
   if (hash.has(obj)) {
     return hash.get(obj);
   }
+
+  // 获取所有自身属性的描述符
   let allDesc = Object.getOwnPropertyDescriptors(obj);
-  // 方法返回一个指定对象上某个自身属性的描述符
-  // 遍历传入参数所有键的特性
-  // Object.getPrototypeOf 是JavaScript中的一个标准内置方法，用于获取一个对象的原型（prototype）
-  let cloneObj = Object.create(Object.getPrototypeOf(obj), allDesc);
+
+  // 创建一个新的对象，继承自原对象的原型
+  let cloneObj = Array.isArray(obj) ? [] : Object.create(Object.getPrototypeOf(obj), allDesc);
+
+  // 存储到哈希表中，处理循环引用
   hash.set(obj, cloneObj);
-  // Object.getOwnPropertyNames() 方法返回一个数组，该数组包含了对象的所有自身属性的键名（包括不可枚举属性，但不包括 Symbol 属性）
-  // Reflect.ownKeys(obj) 的目的是为了获取对象 obj 所有的自有属性键，包括常规的可枚举和不可枚举属性、Symbol 类型的属性
+
+  // 遍历对象属性进行拷贝
   for (let key of Reflect.ownKeys(obj)) {
-    cloneObj[key] = Object.defineProperty(obj[key]) && typeOf obj[key] !== 'function' ?
-      deepClone(obj[key], hash) : obj[key];
+    if (isComplexDataType(obj[key]) && typeof obj[key] !== 'function') {
+      cloneObj[key] = deepClone(obj[key], hash);
+    } else {
+      cloneObj[key] = obj[key];
+    }
   }
+
   return cloneObj;
 };
+
+// 测试代码
+const original = {
+  number: 1,
+  string: 'hello',
+  date: new Date(),
+  regex: /abc/i,
+  array: [1, 2, 3],
+  nested: {
+    a: 1,
+    b: 2
+  },
+  func: function() { console.log('test'); }
+};
+
+const copy = deepClone(original);
+console.log(copy);
+
 ```
 ## 验证代码用例
 ```javascript
