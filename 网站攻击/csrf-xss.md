@@ -111,4 +111,61 @@ Session: 数据存储在服务器端，通常是服务器的内存中。
 
 - **Session**是一种服务器端用来跟踪用户会话状态的机制。当用户首次访问服务器时，服务器会创建一个唯一的Session ID，并将这个ID通过Cookie的形式发送给用户的浏览器（尽管Session数据本身并不直接存储在Cookie中）。用户的浏览器随后在后续请求中会带着这个Session ID。服务器端则使用这个ID作为键，在内存或其他存储介质中查找与之关联的Session数据，这些数据可能包含用户身份验证信息、购物车内容、用户偏好设置等。由于Session数据存储在服务器端，相较于Cookie，它不太容易被用户直接查看或篡改，提供了更高的安全性，但也对服务器的存储资源提出了要求。
 
+####  怎么防止 xss攻击
+
+防止 XSS（跨站脚本）攻击需要采取多种安全措施，以确保用户输入和输出的数据都得到正确处理和过滤。以下是一些常见的方法和最佳实践：
+
+1. **输入验证和过滤**：
+   - **白名单**：只允许符合预期格式的输入。例如，对于电子邮件地址，只允许包含字母、数字、点和@符号的输入。
+   - **黑名单**：移除或转义输入中的恶意字符或字符串，但这种方法不如白名单安全。
+
+2. **输出编码**：
+   - 在将数据输出到 HTML 页面时，确保对用户输入进行适当的编码。例如，使用 `htmlspecialchars()` 函数（PHP）或 `htmlencode`（JavaScript）将 `<`、`>`、`&` 等字符转义。
+
+   
+3. **使用安全的库和框架**：
+   - 利用安全的前端框架和库（如 React、Angular 等），这些工具在输出时自动对数据进行编码，防止 XSS 攻击。
+
+4. **内容安全策略（CSP）**：
+   - 实施 CSP 头（Content Security Policy），通过白名单方式限制页面上可以执行的资源（如脚本、样式等）。例如：
+     ```http
+     Content-Security-Policy: default-src 'self'; script-src 'self' https://trustedscripts.example.com; style-src 'self' https://trustedstyles.example.com;
+     ```
+
+5. **HttpOnly 和 Secure 标志**：
+   - 为 Cookie 设置 HttpOnly 标志，防止 JavaScript 访问 Cookie。
+   - 为 Cookie 设置 Secure 标志，只允许在 HTTPS 连接上传输 Cookie。
+
+6. **验证和过滤 JSON 数据**：
+   - 如果应用处理 JSON 数据，确保对 JSON 数据进行验证和过滤，防止注入恶意代码。
+
+7. **避免使用 eval()**：
+   - 避免在代码中使用 `eval()`、`setTimeout()` 和 `setInterval()` 等函数来执行字符串形式的代码。
+
+8. **定期安全审计和测试**：
+   - 定期进行代码审计和安全测试（如渗透测试），发现和修复潜在的 XSS 漏洞。
+
+这些方法和最佳实践可以有效防止 XSS 攻击，保护应用和用户的安全。
+
+```js
+
+function escapeHTML(str) {
+    var map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return str.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
+
+// 示例
+var encodedStr = escapeHTML('<script>alert("XSS")</script>');
+console.log(encodedStr); // &lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;
+
+```
+
+
+
 [Web常见安全问题及解决方法](https://juejin.cn/post/6974667077026070535)

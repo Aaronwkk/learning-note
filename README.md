@@ -64,6 +64,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 
 [ahooks 源码解析- 虚拟滚动](https://gpingfeng.github.io/ahooks-analysis/hooks/scene/use-virtual-list)
 
+[redux 源码](https://github.com/ecmadao/Coding-Guide/blob/master/Notes/React/Redux/Redux%E5%85%A5%E5%9D%91%E8%BF%9B%E9%98%B6-%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90.md)
+
 
 ## vue
 
@@ -76,6 +78,8 @@ web相关知识点总结[Web](https://github.com/qianguyihao/Web)
 [为什么说 Vue 的响应式更新精确到组件级别？（原理深度解析）](https://juejin.cn/post/6844904113432444942#comment)
 
 [Vue2 和 Vue3 的响应式原理比对](https://juejin.cn/post/7124351370521477128?searchId=202403010931034D303B43543E9C53F2B5)
+
+[vue2 骨架屏基于vNode 的实现](https://juejin.cn/post/6943020826627145735?searchId=20240724153136C7FFC8167FB19ED34D3B)
 
 ## vue3
 

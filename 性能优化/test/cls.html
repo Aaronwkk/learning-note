@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CLS Measurement Demo</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  button {
+    padding: 100px 200px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+<script>
+    setTimeout(() => {
+        document.getElementById('shift-button').style.marginLeft = '100px'
+    },1000)
+    setTimeout(() => {
+        document.getElementById('shift-button2').style.marginLeft = '100px'
+    },500)
+    setTimeout(() => {
+        document.getElementById('shift-button3').style.marginLeft = '100px'
+    },20)
+    setTimeout(() => {
+        document.getElementById('shift-button4').style.marginLeft = '100px'
+    },10)
+  window.onload = function() {
+    let clsValue = 0;
+    let sessionValue = 0;
+    let sessionEntries = [];
+
+
+    const entryHandler = function(entryList) {
+      console.log(entryList.getEntries())
+      for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+          const firstSessionEntry = sessionEntries[0];
+          const lastSessionEntry = sessionEntries[sessionEntries.length - 1];
+
+          if (
+            sessionValue &&
+            entry.startTime - lastSessionEntry.startTime < 1000 &&
+            entry.startTime - firstSessionEntry.startTime < 5000
+          ) {
+            sessionValue += entry.value;
+            sessionEntries.push(entry);
+          } else {
+            sessionValue = entry.value;
+            sessionEntries = [entry];
+          }
+
+          if (sessionValue > clsValue) {
+            clsValue = sessionValue;
+            console.log('New CLS value:', clsValue);
+            // observer.disconnect()
+          }
+        }
+      }
+    };
+
+    const observer = new PerformanceObserver(entryHandler);
+    observer.observe({ type: 'layout-shift', buffered: true });
+
+    document.getElementById('shift-button').addEventListener('click', function() {
+      this.style.marginLeft = '100px'; // 引发布局偏移
+    });
+  };
+</script>
+</head>
+<body>
+<div class="container">
+  <button id="shift-button" name="11">Cause Layout Shift</button>
+  <button id="shift-button2">Cause Layout Shift</button>
+  <button id="shift-button3">Cause Layout Shift</button>
+  <button id="shift-button4">Cause Layout Shift</button>
+</div>
+</body>
+</html>
