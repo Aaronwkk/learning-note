@@ -1,4 +1,3 @@
-
 MutationObserver：用来监听 DOM 树的变动
 
 IntersectionObserver：用来监听两个元素是否相交
